@@ -46,7 +46,7 @@ Observe whether the page redirects to linkedin.com/oauth/v2/authorization.
 
 Console Log: "BUG-5678: LinkedIn OAuth redirection failed."
 
-Screenshot  :LinkedIn OAuth Test -- Priority High - Verify LinkedIn OAuth Redirection (Defect ID BUG-5678) (failed).png
+Screenshot  :LinkedIn OAuth Test -- Priority High - Verify LinkedIn OAuth Redirection (Defect ID BUG-5678) (failed)(attempt4).png
 
 Screen Recorder: TestWelcomeLinkedIn.cy.js.mp4
 
