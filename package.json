@@ -1,0 +1,21 @@
+{
+  "name": "linq-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:welcome-logo": "  ",
+    "test:welcome-email": "npx cypress run --spec cypress/e2e/Tests/TestWelcomeEmail.cy.js",
+    "test:welcome-linkedIn": "npx cypress run --spec cypress/e2e/Tests/TestWelcomeLinkedId.cy.js",
+    "test:chrome-execution": "npx cypress run --spec cypress/e2e/Tests/TestWelcomeEmail--browser chrome --headed",
+    "tests: all" : "npx cypress run --spec cypress/e2e/Tests",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.2.1",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
