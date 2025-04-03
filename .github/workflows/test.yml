@@ -1,0 +1,32 @@
+name: Linq-project-smok
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: false # Set to true if using Cypress Dashboard
+          video: true
+
+      - name: Upload Cypress Videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      - name: Upload Cypress Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots 
+
+
+
