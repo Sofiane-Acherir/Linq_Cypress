@@ -1,7 +1,5 @@
-name: Regression Second End-to-End Tests
-
-on: 
-  push
+name: Linq-project-smok
+on: push
 
 jobs:
   cypress-run:
@@ -10,22 +8,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Cypress tests
-        run: |
-          npx cypress run --spec "cypress/e2e/TestWelcomeEmail.cy.js,cypress/e2e/TestWelcomeLinkedIn.cy.js,cypress/e2e/TestWelcomeLogo.cy.js"
-
-      # Upload Cypress screenshots if tests fail
-      - name: Upload Cypress Screenshots
-        if: failure()
-        uses: actions/upload-artifact@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+          record: false # Set to true if using Cypress Dashboard
+          video: true
 
-      # Upload Cypress videos for debugging
       - name: Upload Cypress Videos
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,4 +21,10 @@ jobs:
           name: cypress-videos
           path: cypress/videos
 
+      - name: Upload Cypress Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
         
