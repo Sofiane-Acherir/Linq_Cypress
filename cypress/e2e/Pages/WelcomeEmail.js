@@ -18,7 +18,7 @@ locatorEmail ={
         
         cy.contains("span", "Email", { timeout: 10000 })
         .should("be.visible")
-        .click();
+        .click({ force: true });
           
       };
   

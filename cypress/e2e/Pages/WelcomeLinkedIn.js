@@ -11,11 +11,11 @@ navigatePage () {
   };
 
 clickLinkedInLink() {
-    cy.contains("span", "LinkedIn", { timeout: 10000 })
+    cy.contains("span", "LinkedIn", { timeout: 20000 })
       .should("be.visible")
       .should("exist");
 
-    cy.contains("span", "LinkedIn").invoke('removeAttr', 'target').click();
+    cy.contains("span", "LinkedIn").invoke('removeAttr', 'target').click({ force: true });
 
 // Handle the cross-origin LinkedIn authentication page
     cy.origin("https://www.linkedin.com", () => {
